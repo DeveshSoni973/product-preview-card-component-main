@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <title>Frontend Mentor | Product preview card component</title>
+    <style>
+      :root {
+        font-size: 1rem; /* Default root font size (16px) */
+      }
+      body {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 1rem; /* 16px */
+        background-color: #f3eae3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      .card {
+        display: flex;
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 4px 8px */
+        max-width: 40rem; /* Limit card width to show background on large screens */
+      }
+      .left {
+        flex: 1;
+        display: flex;
+        border-radius: 0.625rem 0 0 0.625rem; /* 10px */
+        overflow: hidden; /* Ensures the image respects the rounded corners */
+      }
+      .right {
+        flex: 1;
+        background-color: #ffffff;
+        padding: 1.25rem 1.25rem 2.5rem 1.25rem; /* 20px 20px 40px 20px */
+        border-radius: 0 0.625rem 0.625rem 0; /* 0 10px 10px 0 */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .perfume_img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .company_name {
+        font-family: 'Fraunces', serif;
+        font-weight: 700;
+        font-size: 2rem; /* 32px */
+        margin: 0.625rem 0; /* 10px */
+      }
+      .description {
+        color: #6c7289;
+        line-height: 1.6;
+      }
+      .price-container {
+        display: flex;
+        align-items: center;
+      }
+      .current_price {
+        font-family: 'Fraunces', serif;
+        font-weight: 700;
+        font-size: 1.875rem; /* 30px */
+        color: #3d8168;
+        margin-right: 1.25rem; /* 20px */
+        display: inline-block;
+        margin: 0;
+      }
+      .fool_price {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 0.875rem; /* 14px */
+        color: #6c7289;
+        text-decoration: line-through;
+        display: inline-block;
+        margin: 0;
+      }
+      .cart {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 0.875rem; /* 14px */
+        color: white;
+        background-color: #3d8168;
+        padding: 0.625rem; /* 10px */
+        text-align: center;
+        border-radius: 0.3125rem; /* 5px */
+        cursor: pointer;
+        margin-top: 0.625rem; /* 10px */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cart img {
+        width: 1rem; /* 16px */
+        height: 1rem; /* 16px */
+        margin-right: 0.625rem; /* 10px */
+      }
+      .cart:hover {
+        background-color: #1a4032;
+      }
+      .perfume {
+        letter-spacing: 0.25rem; /* 4px */
+        text-transform: uppercase;
+        color: #6c7289;
+      }
+      .left, .right {
+        min-width: 0;
+      }
+      /* Media query for mobile devices */
+      @media (max-width: 37.5rem) { /* 600px */
+        .card {
+          flex-direction: column;
+          margin-left: 1.25rem; /* 20px */
+          margin-right: 1.25rem; /* 20px */
+        }
+        .left {
+          border-radius: 0.625rem 0.625rem 0 0; /* 10px */
+        }
+        .right {
+          border-radius: 0 0 0.625rem 0.625rem; /* 0 0 10px 10px */
+        }
+        .perfume_img {
+          content: url('images/image-product-mobile.jpg'); /* Swap to mobile image */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="left">
+        <img
+          src="images/image-product-desktop.jpg"
+          alt="Gabrielle Essence Eau De Parfum bottle"
+          class="perfume_img"
+        />
+      </div>
+      <div class="right">
+        <span class="perfume">Perfume</span>
+        <h1 class="company_name">Gabrielle Essence Eau De Parfum</h1>
+        <p class="description">
+          A floral, solar and voluptuous interpretation composed by Olivier Polge,
+          Perfume-Creator for the House of CHANEL.
+        </p>
+        <div class="price-container">
+          <p class="current_price">$149.99</p>
+          <p class="fool_price">$169.99</p>
+        </div>
+        <div class="cart">
+          <img src="images/icon-cart.svg" alt="cart icon"> Add to Cart
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
